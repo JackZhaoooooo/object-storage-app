@@ -1,0 +1,17 @@
+{
+  "name": "object-storage-app",
+  "version": "1.0.0",
+  "description": "Google 风格对象存储网站",
+  "main": "index.js",
+  "scripts": {
+    "dev": "python3 -m http.server 8080",
+    "deploy": "vercel"
+  },
+  "keywords": [
+    "object-storage",
+    "google-style",
+    "file-upload"
+  ],
+  "author": "JackZhaoooooo",
+  "license": "MIT"
+}
