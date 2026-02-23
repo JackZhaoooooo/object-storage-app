@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google 风格对象存储</title>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- 顶部导航栏 -->
+    <header class="google-header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fab fa-google-drive"></i>
+                <span>CloudStorage</span>
+            </div>
+            <nav class="nav-items">
+                <a href="#" class="nav-item active">首页</a>
+                <a href="#" class="nav-item">我的文件</a>
+                <a href="#" class="nav-item">回收站</a>
+            </nav>
+            <div class="user-actions">
+                <button class="icon-btn" title="通知">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <button class="icon-btn" title="设置">
+                    <i class="fas fa-cog"></i>
+                </button>
+                <div class="avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="container">
+        <!-- 上传区域 -->
+        <section class="upload-section">
+            <div class="card">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <h3>拖拽图片到这里上传</h3>
+                    <p>或者</p>
+                    <button class="btn-google btn-blue ripple-effect" id="selectFileBtn">
+                        <i class="fas fa-folder-open"></i>
+                        选择文件
+                    </button>
+                    <input type="file" id="fileInput" accept="image/*" multiple hidden>
+                    <div class="upload-progress hidden" id="uploadProgress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <span id="progressText">上传中... 0%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 图片列表/预览区 -->
+        <section class="gallery-section">
+            <div class="section-header">
+                <h2><i class="fas fa-images"></i> 已上传图片</h2>
+                <div class="actions">
+                    <button class="btn-google btn-text ripple-effect" onclick="clearAll()">
+                        <i class="fas fa-trash"></i> 清空全部
+                    </button>
+                </div>
+            </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- 图片卡片会动态插入这里 -->
+            </div>
+            <div class="empty-state hidden" id="emptyState">
+                <i class="fas fa-image"></i>
+                <p>还没有上传任何图片</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
